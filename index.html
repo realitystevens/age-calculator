@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculate your age easily with the Age Calculator tool.">
+    <meta property="og:title" content="Age Calculator">
+    <meta property="og:description" content="Calculate your age easily with the Age Calculator tool">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://realitystevens.github.io/age-calculator">
+    <title>Age Calculator</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script async src="script.js"></script>
+</head>
+<body>
+    <div class="body">
+        <div class="content">
+            <div class="wrapper">
+                <form class="date_input" method="POST">
+                    <div class="date_input_field__container">
+                        <label class="input_label" for="year">Year</label>
+                        <input class="input_field" type="text" name="year" id="year_input_field" placeholder="YYYY" autocomplete="off">
+                        <small id="year_error_field"></small>
+                    </div>
+                    <div class="date_input_field__container">
+                        <label class="input_label" for="month">Month</label>
+                        <input class="input_field" type="text" name="month" id="month_input_field" placeholder="MM" autocomplete="off">
+                        <small id="month_error_field"></small>
+                    </div>
+                    <div class="date_input_field__container">
+                        <label class="input_label" for="day">Day</label>
+                        <input class="input_field" type="text" name="day" id="day_input_field" placeholder="DD" autocomplete="off">
+                        <small id="day_error_field"></small>
+                    </div>
+                    
+                </form>
+                <div class="divider__container">
+                    <img class="arrow_down__icon" src="images/icon-arrow.svg" alt="arrow-down">
+                </div>
+                <div class="result__container">
+                    <p class="year_result result"><span class="purple_text" id="year_result_field">--</span>years</p>
+                    <p class="months_result result"><span class="purple_text" id="month_result_field">--</span>months</p>
+                    <p class="days_result result"><span class="purple_text" id="day_result_field">--</span>days</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
