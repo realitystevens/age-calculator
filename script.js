@@ -34,7 +34,7 @@ function updateAge() {
 
     // Validate year input
     if (yearValue.length > 0 && yearValue.length < 4) {
-        yearError.textContent = "Must be in the valid past";
+        yearError.textContent = "Must be a valid year";
         yearError.style.color = "var(--primary-red)";
         yearInput.style.border = "1px solid var(--primary-red)";
         yearLabel.style.color = "var(--primary-red)";
@@ -42,6 +42,30 @@ function updateAge() {
         yearError.textContent = "";
         yearInput.style.border = "";
         yearLabel.style.color = "";
+    }
+
+    // Validate month input
+    if (monthValue > 12) {
+        monthError.textContent = "Must be a valid month";
+        monthError.style.color = "var(--primary-red)";
+        monthInput.style.border = "1px solid var(--primary-red)";
+        monthLabel.style.color = "var(--primary-red)";
+    } else {
+        monthError.textContent = "";
+        monthInput.style.border = "";
+        monthLabel.style.color = "";
+    }
+
+    // Validate day input
+    if (dayValue > 31) {
+        dayError.textContent = "Must be a valid day";
+        dayError.style.color = "var(--primary-red)";
+        dayInput.style.border = "1px solid var(--primary-red)";
+        dayLabel.style.color = "var(--primary-red)";
+    } else {
+        dayError.textContent = "";
+        dayInput.style.border = "";
+        dayLabel.style.color = "";
     }
 
     // If only year is inputted
@@ -54,23 +78,11 @@ function updateAge() {
     }
 
     // If year and month are inputted
-    if (yearValue.length === 4 && monthValue && !dayValue) {
+    if (yearValue.length === 4 && monthValue <= 12 && !dayValue) {
         const { years, months } = calculateAge(yearValue, monthValue, 1);
         yearResult.textContent = isNaN(years) ? "--" : years;
         monthResult.textContent = isNaN(months) ? "--" : months;
         dayResult.textContent = "--";
-        
-        if (monthValue > 12) {
-            monthError.textContent = "Must be a valid month";
-            monthError.style.color = "var(--primary-red)";
-            monthInput.style.border = "1px solid var(--primary-red)";
-            monthLabel.style.color = "var(--primary-red)";
-        } else {
-            monthError.textContent = "";
-            monthInput.style.border = "";
-            monthLabel.style.color = "";
-        }
-        
         return;
     }
 
@@ -80,18 +92,6 @@ function updateAge() {
         yearResult.textContent = isNaN(years) ? "--" : years;
         monthResult.textContent = isNaN(months) ? "--" : months;
         dayResult.textContent = isNaN(days) ? "--" : days;
-
-        if (dayValue > 31) {
-            dayError.textContent = "Must be a valid day";
-            dayError.style.color = "var(--primary-red)";
-            dayInput.style.border = "1px solid var(--primary-red)";
-            dayLabel.style.color = "var(--primary-red)";
-        } else {
-            dayError.textContent = "";
-            dayInput.style.border = "";
-            dayLabel.style.color = "";
-        }
-
         return;
     }
 
