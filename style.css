@@ -82,7 +82,8 @@
 
 .error_field {
     font-style: italic;
-    font-size: 0.75rem;
+    font-size: 0.55rem;
+    margin-top: 7px;
 }
 
 .divider__container {
@@ -125,4 +126,28 @@
 .purple_text {
     color: var(--primary-purple);
     margin-right: 3px;
+}
+
+
+@media only screen and (min-width: 510px) {
+    .wrapper {
+        padding: 2rem;
+    }
+
+    .divider__container {
+        position: relative;
+        margin: 0;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 50px;
+    }
+
+    .result {
+        font-size: 45px;
+        font-weight: 800;
+        color: var(--neutral-black);
+        font-style: italic;
+        line-height: 1.2;
+    }
 }
